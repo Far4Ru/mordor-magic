@@ -1,0 +1,7 @@
+</h2>
+    <div style='height:5%;'>
+        <input type='button' value='Назад' onclick='changeFrameTo(previousPage.pop(),"","back")'>
+    </div>
+    <div>
+    </div>
+</div>

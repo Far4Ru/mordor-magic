@@ -1,0 +1,35 @@
+# Default idea ignored files
+/shelf/
+/workspace.xml
+
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Server
+.htaccess
+
+# File types
+*.xml
+*.ico
+*.list
+*.structure
+*.png
+*.jpg
+
+# Folders
+settings
+libs
+
+# Files
+db_connect.php
+check_login.php
+get_vkrss_news_wall.php
+login.php
+registration.php
+save_daily_goal_notes.php
+get_daily_goal_notes.php
+save_profile_notes.php
+send_mail.php
