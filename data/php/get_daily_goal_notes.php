@@ -3,11 +3,14 @@
     if(isset($_POST['id'])){
         $text = "";
         $id = $_POST['id'];
-        if(file_exists($TMP_PATH)){
+        if(file_exists(TMP_PATH_DAILY_GOAL_NOTES)){
             $filename = TMP_PATH_DAILY_GOAL_NOTES . FILE_PREFIX . $id . FILE_SUFFIX . FILE_FORMAT;
             if(file_exists($filename)){
                 $handle = fopen($filename, "r");
-                $contents = fread($handle, filesize($filename));
+                $contents = "";
+                if(filesize($filename) > 0){
+                    $contents = fread($handle, filesize($filename));
+                }
                 $text = $contents;
                 fclose($handle);
             }

@@ -223,7 +223,9 @@ $id = $_SESSION['id'];
                 <p>
                     <textarea  id='dailyGoalNotes'></textarea>
                 </p>
-                <p align='right' style='margin-right:7%;'><input type='button' value='Сохранить' onclick='saveDailyGoalNotes()'>
+
+                <p align='right' style='display:inline;margin-left:45%;'><input type='button' value='Архив' onclick='archiveDailyGoalNotes()'>
+                <p align='right' style='display:inline;margin-left:2%;'><input type='button' value='Сохранить' onclick='saveDailyGoalNotes()'>
                 </p>
             </div>
         </div>
@@ -642,6 +644,20 @@ $id = $_SESSION['id'];
                 'Заметки успешно сохранены.',
                 'success'
             );
+        });
+    }
+
+
+    function archiveDailyGoalNotes(){
+        id = 0<?php echo "+".$id; ?>;
+        $.post('/data/php/archive_daily_goal_notes.php',{'id':id}).done(function(){
+
+            Swal.fire(
+                'Архивация завершена!',
+                'Заметки успешно помощены в архив.',
+                'success'
+            );
+            getDailyGoalNotes();
         });
     }
     function getDailyGoalNotes(){
